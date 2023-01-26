@@ -1,24 +1,18 @@
-package com.jusantos.university.entity;
+package com.jusantos.university.entity.dto;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import com.jusantos.university.entity.Curso;
+
 import java.util.List;
 
-@Entity
-@Table(name = "ALUNO")
-public class Aluno implements Serializable {
+public class AlunoDTO {
 
-    private static final long serialVersionUID=1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer matricula;
 
     private String nome;
 
     private String email;
 
-    private List<Curso> curso;
+    private Integer cursoId;
 
     public Integer getMatricula() {
         return matricula;
@@ -44,11 +38,11 @@ public class Aluno implements Serializable {
         this.email = email;
     }
 
-    public List<Curso> getCurso() {
-        return curso;
+    public Integer getCursoId() {
+        return cursoId;
     }
 
-    public void setCurso(List<Curso> curso) {
-        this.curso = curso;
+    public void setCursoId(Integer cursoId) {
+        this.cursoId = cursoId;
     }
 }
