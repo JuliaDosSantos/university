@@ -1,18 +1,12 @@
 package com.jusantos.university.entity.dto;
 
-import com.jusantos.university.entity.Curso;
-
-import java.util.List;
-
-public class AlunoDTO {
+public class AlunoResponse {
 
     private Integer matricula;
 
     private String nome;
 
     private String email;
-
-    private Integer cursoId;
 
     public Integer getMatricula() {
         return matricula;
@@ -36,13 +30,5 @@ public class AlunoDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Integer getCursoId() {
-        return cursoId;
-    }
-
-    public void setCursoId(Integer cursoId) {
-        this.cursoId = cursoId;
     }
 }
