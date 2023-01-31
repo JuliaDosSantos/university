@@ -1,6 +1,7 @@
 package com.jusantos.university.service;
 
 import com.jusantos.university.entity.Turma;
+import com.jusantos.university.entity.dto.AlunoRequest;
 import com.jusantos.university.entity.dto.TurmaResponse;
 import com.jusantos.university.repository.TurmaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,8 @@ public class TurmaService {
         return turmaResponses;
     }
 
+    public void insert(Turma turma) {
+        turmaRepository.save(turma);
+    }
 
 }
