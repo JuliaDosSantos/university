@@ -21,4 +21,9 @@ public class AlunoController {
 
     @PostMapping()
     public void insert(@RequestBody AlunoRequest alunoRequest) {alunoService.insert(alunoRequest);}
+
+    @GetMapping("/alunoId/{matricula}")
+    public Aluno getAlunoById(@PathVariable Integer matricula) {
+        return alunoService.getAlunoById(matricula);
+    }
 }

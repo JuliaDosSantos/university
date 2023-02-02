@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AlunoService {
@@ -43,5 +44,15 @@ public class AlunoService {
         aluno.setCursosId(cursos);
 
         alunoRepository.save(aluno);
+    }
+
+    public Aluno getAlunoById(Integer matricula) {
+        Optional<Aluno> alunoOptional = alunoRepository.findById(matricula);
+        if (alunoOptional.get() != null) {
+            return alunoOptional.get();
+        }
+
+        return null;
+
     }
 }
