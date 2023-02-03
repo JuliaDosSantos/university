@@ -17,13 +17,22 @@ public class AlunoController {
     AlunoService alunoService;
 
     @GetMapping("/all")
-    public List<AlunoResponse> getAll() {return alunoService.getAll();}
+    public List<AlunoResponse> getAll() {
+        return alunoService.getAll();
+    }
 
     @PostMapping()
-    public void insert(@RequestBody AlunoRequest alunoRequest) {alunoService.insert(alunoRequest);}
+    public void insert(@RequestBody AlunoRequest alunoRequest) {
+        alunoService.insert(alunoRequest);
+    }
 
     @GetMapping("/alunoId/{matricula}")
     public Aluno getAlunoById(@PathVariable Integer matricula) {
         return alunoService.getAlunoById(matricula);
+    }
+
+    @PutMapping("/alteraraluno")
+    public void alterarAluno(@RequestBody Aluno alunoEntrada) {
+        alunoService.alterarAluno(alunoEntrada);
     }
 }

@@ -51,8 +51,14 @@ public class AlunoService {
         if (alunoOptional.get() != null) {
             return alunoOptional.get();
         }
-
         return null;
+    }
 
+    public void alterarAluno (Aluno alunoEntrada) {
+        Aluno aluno = getAlunoById(alunoEntrada.getMatricula());
+        aluno.setNome(alunoEntrada.getNome());
+        aluno.setEmail(alunoEntrada.getEmail());
+
+        alunoRepository.save(aluno);
     }
 }
