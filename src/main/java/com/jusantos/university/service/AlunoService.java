@@ -61,4 +61,8 @@ public class AlunoService {
 
         alunoRepository.save(aluno);
     }
+
+    public void deleteAluno(Integer matricula) {
+        alunoRepository.deleteById(matricula);
+    }
 }

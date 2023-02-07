@@ -35,4 +35,9 @@ public class AlunoController {
     public void alterarAluno(@RequestBody Aluno alunoEntrada) {
         alunoService.alterarAluno(alunoEntrada);
     }
+
+    @DeleteMapping("/deletealuno/{matricula}")
+    public void deleteAluno(@PathVariable Integer matricula) {
+        alunoService.deleteAluno(matricula);
+    }
 }

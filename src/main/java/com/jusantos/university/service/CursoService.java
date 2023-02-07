@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CursoService {
@@ -20,5 +21,13 @@ public class CursoService {
 
     public void insert(Curso curso) {
         cursoRepository.save(curso);
+    }
+
+    public Curso getCursoById(Integer Id) {
+        Optional<Curso> cursoOptional = cursoRepository.findById(Id);
+        if (cursoOptional.get() != null) {
+            return cursoOptional.get();
+        }
+        return null;
     }
 }
