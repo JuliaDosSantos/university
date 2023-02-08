@@ -30,4 +30,13 @@ public class CursoService {
         }
         return null;
     }
+
+    public void alterarCurso(Curso cursoEntrada){
+        Curso curso = getCursoById(cursoEntrada.getId());
+        curso.setNome(cursoEntrada.getNome());
+        curso.setPreco(cursoEntrada.getPreco());
+
+        cursoRepository.save(curso);
+
+    }
 }

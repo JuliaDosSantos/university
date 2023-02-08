@@ -29,4 +29,10 @@ public class CursoController {
         return cursoService.getCursoById(Id);
     }
 
+    @PutMapping("/alterarcurso")
+    public void alterarCurso(@RequestBody Curso cursoEntrada){
+       cursoService.alterarCurso(cursoEntrada);
+
+    }
+
 }
