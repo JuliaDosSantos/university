@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TurmaService {
@@ -33,4 +34,12 @@ public class TurmaService {
         turmaRepository.save(turma);
     }
 
+    public Turma getTurmaById(Integer id){
+        Optional<Turma> turmaOptional = turmaRepository.findById(id);
+        if (turmaOptional.get() != null) {
+            return turmaOptional.get();
+        }
+
+        return null;
+    }
 }

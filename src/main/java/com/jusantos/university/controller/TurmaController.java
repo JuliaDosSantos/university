@@ -25,4 +25,10 @@ public class TurmaController {
     public void insert(@RequestBody Turma turma) {
         turmaService.insert(turma);
     }
+
+    @GetMapping("/turmabyid/{id}")
+    public Turma getTurmaById(@PathVariable Integer id){
+        return turmaService.getTurmaById(id);
+    }
+
 }

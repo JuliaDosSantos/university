@@ -25,13 +25,19 @@ public class CursoController {
     }
 
     @GetMapping("/cursobyid/{Id}")
-    public Curso getCursoById(@PathVariable Integer Id) {
-        return cursoService.getCursoById(Id);
+    public Curso getCursoById(@PathVariable Integer id) {
+        return cursoService.getCursoById(id);
     }
 
     @PutMapping("/alterarcurso")
     public void alterarCurso(@RequestBody Curso cursoEntrada){
        cursoService.alterarCurso(cursoEntrada);
+
+    }
+
+    @DeleteMapping("/deletecurso/{id}")
+    public void deleteCurso(@PathVariable Integer id) {
+        cursoService.deleteCurso(id);
 
     }
 

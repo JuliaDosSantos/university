@@ -18,8 +18,17 @@ public class Turma implements Serializable {
 
     private Integer cursoId;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+
+    @ElementCollection
     private List<Integer> alunosId;
+
+    public Turma() {}
+
+    public Turma(Integer codigo, Integer cursoId, List<Integer> alunosId) {
+        this.codigo = codigo;
+        this.cursoId = cursoId;
+        this.alunosId = alunosId;
+    }
 
     public Integer getCodigo() {
         return codigo;

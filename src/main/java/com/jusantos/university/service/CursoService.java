@@ -23,8 +23,8 @@ public class CursoService {
         cursoRepository.save(curso);
     }
 
-    public Curso getCursoById(Integer Id) {
-        Optional<Curso> cursoOptional = cursoRepository.findById(Id);
+    public Curso getCursoById(Integer id) {
+        Optional<Curso> cursoOptional = cursoRepository.findById(id);
         if (cursoOptional.get() != null) {
             return cursoOptional.get();
         }
@@ -37,6 +37,11 @@ public class CursoService {
         curso.setPreco(cursoEntrada.getPreco());
 
         cursoRepository.save(curso);
+
+    }
+
+    public void deleteCurso(Integer id) {
+        cursoRepository.deleteById(id);
 
     }
 }
