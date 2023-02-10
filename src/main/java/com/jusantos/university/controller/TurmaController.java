@@ -31,4 +31,14 @@ public class TurmaController {
         return turmaService.getTurmaById(id);
     }
 
+    @PutMapping("/alterarturma")
+    public void alterarTurma(@RequestBody Turma turmaEntrada){
+        turmaService.alterarTurma(turmaEntrada);
+    }
+
+    @DeleteMapping("/deleteturma/{id}")
+    public void deleteTurma(@PathVariable Integer id){
+        turmaService.deleteTurma(id);
+    }
+
 }

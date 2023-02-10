@@ -24,7 +24,7 @@ public class CursoController {
         cursoService.insert(curso);
     }
 
-    @GetMapping("/cursobyid/{Id}")
+    @GetMapping("/cursobyid/{id}")
     public Curso getCursoById(@PathVariable Integer id) {
         return cursoService.getCursoById(id);
     }

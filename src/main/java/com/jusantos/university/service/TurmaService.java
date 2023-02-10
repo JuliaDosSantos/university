@@ -42,4 +42,16 @@ public class TurmaService {
 
         return null;
     }
+
+    public void alterarTurma(Turma turmaEntrada) {
+        Turma turma = getTurmaById(turmaEntrada.getCodigo());
+        turma.setCursoId(turmaEntrada.getCursoId());
+        turma.setAlunos(turmaEntrada.getAlunos());
+
+        turmaRepository.save(turma);
+    }
+
+    public void deleteTurma(Integer id){
+        turmaRepository.deleteById(id);
+    }
 }
